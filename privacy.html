@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CurioPlay — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 4rem; max-width: 44rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: #1c1c1e; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e9e9ea; background: #1c1d20; }
+    a { color: #8ab4ff; }
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.12rem; margin: 2.1rem 0 .5rem; }
+  .updated { color: #8a8a8e; font-size: .875rem; margin: 0 0 2rem; }
+  ul { padding-left: 1.15rem; }
+  li { margin: .35rem 0; }
+  footer { margin-top: 3.5rem; font-size: .8rem; color: #8a8a8e; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated 27 August 2026</p>
+<h2>The short version</h2>
+<p>CurioPlay runs no servers. We have no account for you, we do not sell your data, we do not advertise to you, and we do not track you across other apps or websites.</p>
+<p>Information leaves your device in the ways listed in section 3, and nowhere else: looking up artwork and descriptions, a region-level weather check, an app-authenticity check, syncing to your own private iCloud, crash reports on Apple TV, the cloud AI assistant if you switch it on, your own Calendar if you tap Add to Calendar, and a Watch Party if you start one.</p>
+<h2>1. No CurioPlay account</h2>
+<p>CurioPlay has no sign-up and no CurioPlay login. We hold no name, email address or profile for you, and we run no server that stores what you watch.</p>
+<p>You may sign in to services you already have — such as your IPTV provider. Those are your accounts with those companies, not with us.</p>
+<h2>2. What stays on your device</h2>
+<ul>
+<li><strong>What you watch.</strong> Viewing history, resume positions, favourites and recommendations are computed and stored on your device.
+    - <strong>Your provider credentials.</strong> The username and password for your provider are stored in the device Keychain, protected by the system, and are never sent to us. They are sent to the provider you entered them for — and, while iCloud sync is on, to your own private iCloud so your other devices can use the same provider. In iCloud they are held in CloudKit&#x27;s encrypted fields, which we cannot read.
+    - <strong>Kids Mode.</strong> Your Kids Mode settings and PIN are stored only on this device and are never synced or sent anywhere.</li>
+</ul>
+<p><strong>iCloud sync is on by default</strong> while you are signed in to iCloud, and you can turn it off in Settings. It uses <strong>your own private iCloud database</strong> — your Apple account, governed by Apple&#x27;s privacy policy. We cannot read it.</p>
+<h2>3. What leaves your device</h2>
+<p><strong>a) Artwork and descriptions.</strong> To show posters, summaries, cast and programme guides, CurioPlay looks titles up with third-party catalogue services: TMDb, TheTVDB, TVmaze, Wikidata, Wikipedia and Wikimedia, the Apple iTunes Search directory, TheSportsDB, fanart.tv, radio-browser.info, and the iptv-org logo directory. For the trending rails, the app also downloads Simkl&#x27;s public chart documents — a plain file fetch that carries nothing about you or your library. What is sent for lookups is the channel, title, person or team name being matched, and no identifier for you is attached. One exception: TMDb uses an API key you supply yourself. Each service has its own privacy policy.</p>
+<p><strong>b) Weather, by region only.</strong> For ambient context in suggestions, the app may request current conditions from Apple&#x27;s WeatherKit using a fixed coordinate for your device&#x27;s Region setting — the capital city, not your position. CurioPlay does not use GPS, never asks for location permission, and cannot determine where you are.</p>
+<p><strong>c) App authenticity.</strong> On iPhone and iPad the app uses Apple&#x27;s App Attest through Firebase App Check to confirm requests come from a genuine copy of CurioPlay. This validates the app, not you, and it runs at launch whether or not the cloud assistant is switched on. The Mac version does not use it.</p>
+<p><strong>d) Crash reports — Apple TV only.</strong> On Apple TV, CurioPlay uses Firebase Crashlytics so crashes can be fixed. It is <strong>on by default</strong> and you can turn it off in Settings on the Apple TV. It sends the crash, your device model and system version, a random per-installation identifier, and the app&#x27;s recent diagnostic log lines. <strong>Those log lines can include the name of the title you were playing, your list of favourites, and the hostname of your provider</strong> — they are how a playback crash is diagnosed. They never include your provider username or password, your name or your email. Crash reporting also brings a component that reports an app-open session event; turning crash reporting off stops that too. The iPhone, iPad and Mac versions have no crash reporting at all.</p>
+<p><strong>e) The cloud AI assistant — off unless you turn it on.</strong> Ask Curio normally runs entirely on your device using Apple&#x27;s on-device model, and nothing leaves. A cloud assistant is available as an option, is <strong>switched off by default</strong>, and requires you to turn it on in Settings after an explanation naming the provider.</p>
+<p>If you turn it on, what is sent to Google&#x27;s Gemini service is: your question, a small summary of your taste, titles from your library, and recent items from your watch history when they help answer. Your provider username, password and address are never sent. No account identifier is attached. These requests are handled under Google&#x27;s Gemini API terms, which can allow Google to use them to improve its services; if that is not acceptable to you, leave the cloud assistant off.</p>
+<p><strong>f) Your Calendar — only when you ask.</strong> If you tap Add to Calendar on a programme, CurioPlay asks for Calendar permission and writes one event — the programme name, the channel and, where available, the summary — into your default calendar. It requests write-only access and cannot read your calendar. The event then belongs to your Calendar, not to us; if your default calendar is an iCloud one it syncs like any other event.</p>
+<p><strong>g) Watch Party.</strong> If you start or join a Watch Party, CurioPlay uses Apple&#x27;s SharePlay inside your FaceTime call. What reaches the other people in that call is the reactions you send, the name of a channel when you propose switching to it, and a random per-session token so their app can group your messages. Your name, contacts, playlists, provider details and viewing history are not sent.</p>
+<h2>4. What we do not do</h2>
+<ul>
+<li>No advertising. No advertising SDK is present on any platform.
+    - No usage analytics. Google Analytics for Firebase is not used anywhere, and nothing measures what you browse, tap or watch. The one exception is the app-open session event that comes with Apple TV crash reporting, described in 3(d) — turning that off stops it.
+    - No tracking across other companies&#x27; apps or websites, and we never ask permission to, because we never do it.
+    - No advertising identifier (IDFA) is read.
+    - No selling or sharing of personal information.</li>
+</ul>
+<h2>5. Purchases</h2>
+<p>CurioPlay Pro is sold through Apple. Apple tells the app whether a valid purchase exists — nothing more. We never receive your payment details.</p>
+<h2>6. Children, and what Kids Mode is not</h2>
+<p>CurioPlay is not directed at children under 13, and we knowingly collect nothing from them.</p>
+<p>Kids Mode restricts what can be watched and keeps all AI processing on the device — nothing reaches the cloud assistant while it is active. Be aware of what it does <strong>not</strong> do: the other connections in section 3 carry on unchanged, including artwork lookups, iCloud sync and Apple TV crash reports. CurioPlay also plays whatever your provider supplies; we do not rate, filter or classify that content. Kids Mode works from rules stored on your device — a convenience for parents, not a substitute for Screen Time or your provider&#x27;s own controls.</p>
+<h2>7. Your choices</h2>
+<ul>
+<li>Turn the cloud AI assistant on or off (off by default): Settings.
+    - Turn iCloud sync off, and delete what has been synced: Settings.
+    - Turn Apple TV crash reporting off: Settings on the Apple TV.
+    - Delete the app. Everything held on the device goes with it.</li>
+</ul>
+<p>You have the right to ask for access to, correction of, or deletion of personal information about you, to object to or restrict its use, and to complain to your data protection authority. We hold no account and no copy of your library, so in most cases there is nothing for us to retrieve or erase — requests about data held by Apple, Google or the catalogue services need to go to them. Write to us anyway if you are unsure and we will tell you where to ask.</p>
+<h2>8. Changes</h2>
+<p>If what the app sends ever changes, this policy is updated in the same release. The date shown at the top tells you which version you are reading.</p>
+<h2>9. Contact</h2>
+<p>Questions about this policy, or about information held about you, go to curioplayapp@gmail.com.</p>
+<footer>
+  This page mirrors the Privacy Policy shown inside the CurioPlay app. Generated from
+  the app source — do not edit by hand.
+</footer>
+</body>
+</html>
