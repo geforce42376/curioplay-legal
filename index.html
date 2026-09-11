@@ -1,85 +1,304 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CurioPlay — IPTV Home Cinema for iPhone, iPad, Mac and Apple TV</title>
 <meta name="description" content="CurioPlay turns your own IPTV playlist (M3U or Xtream) into a home cinema: a real TV guide with catch-up, movies and series with artwork, Ask Curio on-device AI, Kids Mode, Arabic-first. One purchase for iPhone, iPad, Mac and Apple TV. No ads, no account.">
-<meta property="og:title" content="CurioPlay — IPTV Home Cinema">
-<meta property="og:description" content="Your IPTV playlist, staged like a home cinema. Real TV guide, catch-up, movies and series with artwork, Kids Mode, on-device AI. iPhone, iPad, Mac and Apple TV.">
+<meta property="og:title" content="CurioPlay — Your IPTV, finally beautiful.">
+<meta property="og:description" content="A real TV guide with catch-up, films and series with artwork, an on-device assistant, Kids Mode. iPhone, iPad, Mac and Apple TV, one purchase.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://geforce42376.github.io/curioplay-legal/">
+<meta property="og:image" content="https://geforce42376.github.io/curioplay-legal/assets/tv-home.jpg">
 <link rel="canonical" href="https://geforce42376.github.io/curioplay-legal/">
+<link rel="icon" href="icon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CurioPlay: IPTV Home Cinema","operatingSystem":"iOS, iPadOS, macOS, tvOS","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6762512022","description":"IPTV player for your own M3U or Xtream playlist: TV guide with catch-up, movies and series with artwork, on-device AI assistant, Kids Mode, Arabic-first. iPhone, iPad, Mac and Apple TV."}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CurioPlay: IPTV Home Cinema","operatingSystem":"iOS, iPadOS, macOS, tvOS","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6762512022","image":"https://geforce42376.github.io/curioplay-legal/icon.png","description":"IPTV player for your own M3U or Xtream playlist: TV guide with catch-up, movies and series with artwork, on-device AI assistant, Kids Mode, Arabic-first. iPhone, iPad, Mac and Apple TV."}
 </script>
 <style>
-  :root { color-scheme: dark; --gold:#c9a227; --bg:#0b0a09; --card:#171512; --text:#f2efe8; --muted:#b8b2a6; }
-  * { box-sizing: border-box; }
-  body { margin:0; background: radial-gradient(1200px 600px at 50% -10%, #2a2416 0%, var(--bg) 60%); color:var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 1040px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
-  header { text-align:center; padding: 2rem 0 1rem; }
-  .icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
-  h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 1.2rem 0 .4rem; letter-spacing: -.02em; }
-  .tag { color: var(--muted); font-size: 1.15rem; margin: 0 auto 1.6rem; max-width: 640px; }
-  .hair { width: 64px; height: 4px; background: var(--gold); border-radius: 3px; margin: 1rem auto 1.4rem; }
-  .cta { display:flex; gap: .8rem; justify-content:center; flex-wrap: wrap; margin: 1rem 0 2.5rem; }
-  .cta a { display:inline-block; padding: .85rem 1.3rem; border-radius: 999px; border: 2px solid var(--gold); color: var(--text); text-decoration:none; font-weight: 600; }
-  .cta a.primary { background: var(--gold); color: #1a1400; }
-  .platforms { color: var(--muted); text-align:center; font-size: .95rem; margin-top: -1.6rem; margin-bottom: 2.5rem; }
-  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0 2.5rem; }
-  .card { background: var(--card); border: 1px solid #2a261f; border-radius: 18px; padding: 1.2rem 1.3rem; }
-  .card h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
-  .card p { margin: 0; color: var(--muted); font-size: .98rem; }
-  h2 { font-size: 1.5rem; margin: 2.4rem 0 .8rem; }
-  .faq details { border-bottom: 1px solid #2a261f; padding: .7rem 0; }
-  .faq summary { cursor:pointer; font-weight: 600; }
-  .faq p { color: var(--muted); margin: .5rem 0 0; }
-  .free { border-left: 3px solid var(--gold); padding-left: 1rem; color: var(--muted); }
-  footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; text-align:center; }
-  footer a { color: var(--gold); text-decoration: none; margin: 0 .5rem; }
+  :root{
+    --bg:#070605; --bg2:#0f0d0a; --ink:#f4f1ea; --muted:#a9a397; --gold:#c9a227; --gold2:#e5c766; --line:rgba(255,255,255,.08);
+    --radius:22px; --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);background:rgba(7,6,5,.62);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;letter-spacing:-.01em}
+  .brand img{width:34px;height:34px;border-radius:9px}
+  .brand span em{font-style:normal;color:var(--muted);font-weight:500}
+  .navlinks{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+  .navlinks a{text-decoration:none}
+  .navlinks a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--ink);transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn.gold{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1400;border-color:transparent}
+  .btn.ghost{background:rgba(255,255,255,.04)}
+  .btn svg{width:18px;height:18px}
+  /* hero */
+  .hero{position:relative;padding:96px 0 40px;text-align:center;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:-40% -20% auto -20%;height:120%;background:
+    radial-gradient(900px 520px at 50% 0%, rgba(201,162,39,.18), transparent 60%),
+    radial-gradient(700px 400px at 20% 40%, rgba(70,110,140,.16), transparent 60%),
+    radial-gradient(700px 400px at 80% 45%, rgba(120,60,90,.14), transparent 60%);
+    pointer-events:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .eyebrow:before,.eyebrow:after{content:"";width:28px;height:2px;background:var(--gold);border-radius:2px}
+  h1{font-size:clamp(40px,7.2vw,86px);line-height:.98;letter-spacing:-.035em;margin:22px auto 20px;max-width:14ch;font-weight:800}
+  .lede{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:720px;margin:0 auto 30px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .fine{color:var(--muted);font-size:13.5px;margin-top:18px}
+  .stage{position:relative;margin:56px auto 0;max-width:1180px}
+  .tv{border-radius:18px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.06);background:#000}
+  .stage .side{position:absolute;bottom:-12px;border-radius:26px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 0 6px #100e0c,0 0 0 7px rgba(255,255,255,.07);background:#000}
+  .stage .phone{left:2.5%;width:16%;border-radius:32px}
+  .stage .ipad{right:1%;width:23%;border-radius:20px}
+  /* strips */
+  .strip{margin:70px auto 0;display:flex;justify-content:center;gap:34px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+  .strip span{display:flex;align-items:center;gap:8px}
+  .strip b{color:var(--ink);font-weight:600}
+  /* sections */
+  section{padding:96px 0}
+  .kicker{color:var(--gold);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  h2{font-size:clamp(30px,4.6vw,54px);letter-spacing:-.03em;line-height:1.02;margin:12px 0 16px;font-weight:800}
+  .sub{color:var(--muted);font-size:18px;max-width:640px}
+  .feature{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .feature.flip{direction:rtl}
+  .feature.flip>*{direction:ltr}
+  .shot{border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06);background:#000}
+  .shot.phone{width:min(320px,80%);margin:0 auto;border-radius:40px;box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 0 8px #0f0d0b,0 0 0 9px rgba(255,255,255,.08)}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end}
+  .duo .shot.phone{width:100%}
+  ul.checks{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+  ul.checks li{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
+  ul.checks li:before{content:"";flex:none;width:9px;height:9px;margin-top:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,162,39,.15)}
+  ul.checks li span{color:var(--muted)}
+  ul.checks li b{color:var(--ink);font-weight:600}
+  /* grid of cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:20px;padding:24px 24px 26px}
+  .card h3{margin:14px 0 8px;font-size:18px;letter-spacing:-.01em}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .glyph{width:38px;height:38px;border-radius:11px;background:rgba(201,162,39,.12);display:grid;place-items:center;color:var(--gold2)}
+  .glyph svg{width:20px;height:20px}
+  /* platforms */
+  .plat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .plat .card{padding:22px}
+  .plat .shot{margin-bottom:16px}
+  /* pricing */
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+  .tier{border-radius:24px;padding:30px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+  .tier.pro{border-color:rgba(201,162,39,.45);background:linear-gradient(180deg,rgba(201,162,39,.10),rgba(201,162,39,.03))}
+  .tier h3{margin:0;font-size:22px}
+  .tier .tag{color:var(--gold);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+  .tier p.lead{color:var(--muted);margin:8px 0 18px}
+  /* faq */
+  .faq{margin-top:28px;border-top:1px solid var(--line)}
+  .faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--gold);font-size:22px;font-weight:300}
+  .faq details[open] summary:after{content:"–"}
+  .faq p{color:var(--muted);margin:10px 0 0;max-width:820px}
+  /* honest box */
+  .note{border-left:3px solid var(--gold);padding:6px 0 6px 18px;color:var(--muted);max-width:820px}
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  footer a{text-decoration:none;margin-right:18px}
+  footer a:hover{color:var(--ink)}
+  /* reveal */
+  html.js .r{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  html.js .r.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html.js .r{opacity:1;transform:none;transition:none}}
+  @media (max-width:900px){
+    .feature,.feature.flip{grid-template-columns:1fr;gap:28px}
+    .cards{grid-template-columns:1fr 1fr}
+    .plat{grid-template-columns:1fr 1fr}
+    .tiers{grid-template-columns:1fr}
+    .navlinks{display:none}
+    .stage .side{display:none}
+    section{padding:64px 0}
+  }
+  @media (max-width:560px){.cards,.plat{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <img class="icon" src="icon.png" alt="CurioPlay app icon" width="128" height="128">
-    <h1>Your IPTV, finally beautiful.</h1>
-    <div class="hair"></div>
-    <p class="tag">CurioPlay takes the playlist your provider gave you and turns it into a home cinema: a real TV guide with catch-up, films and series with artwork, an assistant that understands your library, and a Kids Mode you can trust. One purchase for iPhone, iPad, Mac and Apple TV.</p>
-    <div class="cta">
-      <a class="primary" href="https://apps.apple.com/app/id6762512022">Download on the App Store</a>
-      <a href="https://apps.apple.com/app/id6762512022?platform=mac">Mac App Store</a>
-      <a href="https://apps.apple.com/app/id6762512022?platform=appleTV">Apple TV</a>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="icon.png" alt=""><span>Curio<em>Play</em></span></a>
+    <div class="navlinks">
+      <a href="#guide">TV guide</a><a href="#library">Library</a><a href="#ask">Ask Curio</a><a href="#kids">Kids Mode</a><a href="#platforms">Platforms</a><a href="#faq">FAQ</a>
     </div>
-    <p class="platforms">Free with one playlist. No ads, no account, no tracking. Requires iOS 26, macOS 26 or tvOS 26.</p>
-  </header>
-
-  <section class="grid" aria-label="Highlights">
-    <div class="card"><h3>A real TV guide</h3><p>What's on now and next, today and the week ahead. Tap a past programme to replay it, record what you're watching, schedule from the guide.</p></div>
-    <div class="card"><h3>Movies &amp; series, enriched</h3><p>Posters, cast and descriptions appear on their own. Seasons and episodes fall into order. Trending and "Curated for you", from your own library.</p></div>
-    <div class="card"><h3>Ask Curio</h3><p>"Something quiet and beautiful for tonight." The assistant answers from your library, privately, on your device.</p></div>
-    <div class="card"><h3>Kids Mode, locked with a PIN</h3><p>Only what you approve. Age presets, allowed categories, and a PIN only you know to leave.</p></div>
-    <div class="card"><h3>Arabic done right</h3><p>Right-to-left titles, search and metadata that simply work. Not an afterthought.</p></div>
-    <div class="card"><h3>One purchase, four screens</h3><p>iPhone, iPad, Mac and Apple TV. With Pro, your history, favourites and Up Next follow you everywhere through iCloud.</p></div>
-  </section>
-
-  <h2>Try it in ten seconds</h2>
-  <p class="free">No provider yet? Open the app and choose <strong>Explore with Sample Library</strong>: a small set of Creative Commons films lets you browse, search and play to see how everything works. Your own playlist is added with an M3U link or file, or an Xtream login from your provider.</p>
-
-  <h2>Questions</h2>
-  <div class="faq">
-    <details><summary>Does CurioPlay come with channels?</summary><p>No. CurioPlay is a player, like a browser is not the websites. It contains no channels, streams or content and does not help you find any. You connect the playlist your own IPTV provider gave you.</p></details>
-    <details><summary>Which formats work?</summary><p>M3U and M3U8 playlists (link or file), Xtream Codes logins, XMLTV guides. Live TV, movies and series, with catch-up where your provider supports it.</p></details>
-    <details><summary>What is free and what is Pro?</summary><p>The complete player with one playlist is free: live TV, guide, movies, series, search, Kids Mode. Pro adds all your playlists and providers in one place, iCloud sync across devices, catch-up, recording and downloads. Monthly, yearly with a 7-day free trial, or once for a lifetime.</p></details>
-    <details><summary>Is there an account or tracking?</summary><p>No account, no tracking, no ads. Your playlists and viewing stay on your device, and in your own iCloud if you turn sync on. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
-    <details><summary>Which devices?</summary><p>iPhone and iPad (iOS 26), Mac (macOS 26, Apple silicon and Intel), Apple TV (tvOS 26). One purchase covers all of them.</p></details>
+    <a class="btn gold" href="https://apps.apple.com/app/id6762512022"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.8 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.4-.8s2 .8 3.4.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM13.9 5c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>Get CurioPlay</a>
   </div>
+</nav>
 
-  <footer>
-    <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="impressum.html">Impressum</a> · <a href="mailto:curioplayapp@gmail.com">Contact</a>
-    <p>© 2026 Dhafer LAKHDHAR. CurioPlay is an independent app and is not affiliated with any IPTV provider.</p>
-  </footer>
-</main>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">iPhone · iPad · Mac · Apple TV</div>
+    <h1>Your IPTV, finally beautiful.</h1>
+    <p class="lede">CurioPlay takes the playlist your provider gave you and turns it into a home cinema: a real TV guide with catch-up, films and series with artwork, an assistant that understands your library, and a Kids Mode you can trust.</p>
+    <div class="cta">
+      <a class="btn gold" href="https://apps.apple.com/app/id6762512022">Download on the App Store</a>
+      <a class="btn ghost" href="#platforms">One purchase, four screens</a>
+    </div>
+    <p class="fine">Free with one playlist. No ads, no account, no tracking.</p>
+    <div class="stage">
+      <div class="tv"><img src="assets/tv-home.jpg" alt="CurioPlay on Apple TV: the Home screen with a featured film and Continue Watching" width="1600" height="900"></div>
+      <div class="side phone"><img src="assets/iphone-home.jpg" alt="CurioPlay on iPhone"></div>
+      <div class="side ipad"><img src="assets/ipad-home.jpg" alt="CurioPlay on iPad"></div>
+    </div>
+    <div class="strip">
+      <span><b>M3U</b> &amp; <b>Xtream</b> playlists</span><span><b>XMLTV</b> guide with catch-up</span><span><b>On-device</b> assistant</span><span><b>Kids Mode</b> with PIN</span><span><b>Arabic-first</b></span>
+    </div>
+  </div>
+</header>
+
+<section id="guide">
+  <div class="wrap feature r">
+    <div class="shot"><img src="assets/tv-guide.jpg" alt="The TV guide grid on Apple TV: channels by row, programmes by time, today and the week ahead" loading="lazy"></div>
+    <div>
+      <div class="kicker">Live TV</div>
+      <h2>A real TV guide. Catch-up included.</h2>
+      <p class="sub">What's on now and next, today and the week ahead. Select a programme you missed to replay it, record what you're watching, or schedule a recording from the guide.</p>
+      <ul class="checks">
+        <li><div><b>Instant zapping</b> <span>— channels grouped the way your provider sends them, pinned the way you like them.</span></div></li>
+        <li><div><b>Catch-up and recording</b> <span>— replay past programmes, record live, keep it for later (Pro).</span></div></li>
+        <li><div><b>Pin what you love, hide the noise</b> <span>— your Home follows.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="library" style="background:var(--bg2)">
+  <div class="wrap feature flip r">
+    <div class="duo">
+      <div class="shot phone"><img src="assets/iphone-detail.jpg" alt="A film page on iPhone with artwork, cast, description and actions" loading="lazy"></div>
+      <div class="shot phone"><img src="assets/iphone-collection.jpg" alt="The Collection on iPhone: favourites, Up Next, recordings and downloads" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="kicker">Movies &amp; series</div>
+      <h2>Enriched, on their own.</h2>
+      <p class="sub">Posters, cast and descriptions appear without you lifting a finger. Seasons and episodes fall into order. Trending this week and "Curated for you" are picked from your own library, never from a catalogue we sell you.</p>
+      <ul class="checks">
+        <li><div><b>Favourites and Up Next</b> <span>— one Collection, every device.</span></div></li>
+        <li><div><b>Continue Watching</b> <span>— pick up on the Mac what you started on the iPhone (Pro sync).</span></div></li>
+        <li><div><b>Downloads</b> <span>— for the plane, the train, the cabin (Pro).</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="ask">
+  <div class="wrap feature r">
+    <div class="shot"><img src="assets/tv-curated.jpg" alt="Curated for you tonight: three posters chosen from the library on Apple TV" loading="lazy"></div>
+    <div>
+      <div class="kicker">Ask Curio</div>
+      <h2>Ask for a film, a mood, a night.</h2>
+      <p class="sub">"Something quiet and beautiful for tonight." Ask Curio answers from your own library, in your own words. It runs on Apple's on-device models, so what you watch never leaves your device unless you decide it should.</p>
+      <ul class="checks">
+        <li><div><b>Private by default</b> <span>— on-device intelligence; the cloud assistant is off unless you turn it on.</span></div></li>
+        <li><div><b>Curated for you, tonight</b> <span>— your own watching shapes what comes first.</span></div></li>
+        <li><div><b>Search everything</b> <span>— channels, films, shows and what's on now, at once.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kids" style="background:var(--bg2)">
+  <div class="wrap feature flip r">
+    <div class="duo">
+      <div class="shot phone"><img src="assets/iphone-kids.jpg" alt="Kids Mode on iPhone: only the approved channels, a Kids badge and a lock" loading="lazy"></div>
+      <div class="shot phone"><img src="assets/iphone-groups.jpg" alt="The Pin Group and Hide Group menu on a channel group" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="kicker">Family</div>
+      <h2>Kids Mode, locked with a PIN.</h2>
+      <p class="sub">Choose an age preset, approve the live categories and the film genres, hand the remote over. Leaving Kids Mode needs the PIN only you know. Adult keywords stay locked behind it everywhere else, too.</p>
+      <ul class="checks">
+        <li><div><b>Age presets</b> <span>— little kids, older kids, teens.</span></div></li>
+        <li><div><b>Allowlists</b> <span>— only what you approve is visible.</span></div></li>
+        <li><div><b>Arabic done right</b> <span>— right-to-left titles, search and metadata that simply work.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="platforms">
+  <div class="wrap r">
+    <div class="kicker">One purchase, four screens</div>
+    <h2>Native everywhere you watch.</h2>
+    <p class="sub">Not a phone app stretched onto a TV. Each version is built for its screen and its remote, and with Pro your history, favourites and Up Next follow you through your own iCloud.</p>
+    <div class="plat">
+      <div class="card"><div class="shot"><img src="assets/tv-home.jpg" alt="" loading="lazy"></div><h3>Apple TV</h3><p>Remote-friendly layout, Top Shelf on the Home screen, recording and downloads.</p></div>
+      <div class="card"><div class="shot"><img src="assets/mac-player.jpg" alt="" loading="lazy"></div><h3>Mac</h3><p>A player in its own window, Picture in Picture, AirPlay to the big screen.</p></div>
+      <div class="card"><div class="shot"><img src="assets/ipad-detail.jpg" alt="" loading="lazy"></div><h3>iPad</h3><p>Sidebar, big artwork, the guide in full width.</p></div>
+      <div class="card"><div class="shot"><img src="assets/iphone-player.jpg" alt="" loading="lazy"></div><h3>iPhone</h3><p>Picture in Picture, AirPlay, SharePlay, widgets, Siri and Shortcuts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="background:var(--bg2)">
+  <div class="wrap r">
+    <div class="kicker">Free, for real</div>
+    <h2>Everything you need is free.</h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tag">Free</div><h3>The complete player</h3>
+        <p class="lead">With one playlist. No ads, no account, no tracking.</p>
+        <ul class="checks">
+          <li><div><b>Live TV</b> <span>with instant zapping and the full guide</span></div></li>
+          <li><div><b>Movies &amp; series</b> <span>with artwork, cast and descriptions</span></div></li>
+          <li><div><b>Search, Ask Curio, Kids Mode</b></div></li>
+          <li><div><b>Picture in Picture, AirPlay</b></div></li>
+        </ul>
+      </div>
+      <div class="tier pro">
+        <div class="tag">CurioPlay Pro</div><h3>For households with more than one provider</h3>
+        <p class="lead">Monthly, yearly with a 7-day free trial, or once for a lifetime. One purchase covers all your Apple devices.</p>
+        <ul class="checks">
+          <li><div><b>All your playlists and providers</b> <span>in one place</span></div></li>
+          <li><div><b>iCloud sync</b> <span>of history, favourites and resume across iPhone, iPad, Mac and Apple TV</span></div></li>
+          <li><div><b>Catch-up, recording and downloads</b></div></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:28px">Try it in ten seconds: open the app and choose <b>Explore with Sample Library</b>. A small set of Creative Commons films lets you browse, search and play before you add anything.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap r">
+    <div class="kicker">Questions</div>
+    <h2>Straight answers.</h2>
+    <div class="faq">
+      <details><summary>Does CurioPlay come with channels?</summary><p>No. CurioPlay is a player, like a browser is not the websites. It contains no channels, streams or content and does not help you find any. You connect the playlist your own IPTV provider gave you, and you confirm your right to it in our Terms of Use.</p></details>
+      <details><summary>Which formats and providers work?</summary><p>M3U and M3U8 playlists (link or file), Xtream Codes logins and XMLTV guides, which covers nearly every provider. Live TV, movies and series, with catch-up where your provider supports it.</p></details>
+      <details><summary>Is the app translated?</summary><p>The app speaks English, French and Arabic, with full right-to-left support. The App Store listing is also in German.</p></details>
+      <details><summary>Is there an account or any tracking?</summary><p>No account, no tracking, no ads, no analytics SDK. Your playlists and viewing stay on your device, and in your own iCloud if you turn sync on. Read the <a href="privacy.html">Privacy Policy</a>; it lists every connection the app makes.</p></details>
+      <details><summary>Which devices and versions?</summary><p>iPhone and iPad with iOS 26, Mac with macOS 26 (Apple silicon and Intel), Apple TV with tvOS 26. One purchase covers all of them.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="impressum.html">Impressum</a><a href="mailto:curioplayapp@gmail.com">Contact</a></div>
+    <div>© 2026 Dhafer LAKHDHAR · CurioPlay is an independent app, not affiliated with any IPTV provider. Sample films © Blender Foundation, CC BY.</div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.replace('nojs','js');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.r').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
