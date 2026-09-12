@@ -12,13 +12,14 @@
 <meta property="og:image" content="https://geforce42376.github.io/curioplay-legal/assets/tv-home@2x.jpg">
 <link rel="canonical" href="https://geforce42376.github.io/curioplay-legal/">
 <link rel="icon" href="icon.png">
+<link rel="preload" as="image" href="assets/video/hero-tv.jpg">
 <link rel="stylesheet" href="css/site.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"CurioPlay: IPTV Home Cinema","operatingSystem":"iOS, iPadOS, macOS, tvOS","applicationCategory":"EntertainmentApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://apps.apple.com/app/id6762512022","image":"https://geforce42376.github.io/curioplay-legal/icon.png","description":"IPTV player for your own M3U or Xtream playlist: TV guide with catch-up, movies and series with artwork, on-device AI assistant, Kids Mode, Arabic-first. iPhone, iPad, Mac and Apple TV."}
 </script>
 </head>
 <body>
-<div class="aurora" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+<div class="aurora" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
 <nav class="top">
@@ -31,7 +32,7 @@
 
 <main>
 <header class="hero" id="top">
-  <div class="bg"><video autoplay muted loop playsinline preload="auto" poster="assets/video/hero-tv.jpg" data-auto><source src="assets/video/hero-tv.mp4" type="video/mp4"></video></div>
+  <div class="bg vid" data-src="assets/video/hero-tv.mp4"><img src="assets/video/hero-tv.jpg" alt="" width="1920" height="880"><video muted loop playsinline preload="none"></video></div>
   <div class="veil"></div>
   <div class="wrap">
     <div class="eyebrow">iPhone · iPad · Mac · Apple TV</div>
@@ -50,8 +51,8 @@
 <section id="screens">
   <div class="stage">
     <div class="frameWrap">
-      <div class="shot tv"><video muted loop playsinline preload="metadata" poster="assets/video/tv-home.jpg" data-auto><source src="assets/video/tv-home.mp4" type="video/mp4"></video></div>
-      <div class="shot mac"><video muted loop playsinline preload="metadata" poster="assets/video/mac-home.jpg" data-auto><source src="assets/video/mac-home.mp4" type="video/mp4"></video></div>
+      <div class="shot tv vid" data-src="assets/video/tv-home.mp4"><img src="assets/video/tv-home.jpg" alt="CurioPlay on Apple TV" width="1600" height="900"><video muted loop playsinline preload="none"></video></div>
+      <div class="shot mac"><img src="assets/video/mac-home.jpg" alt="CurioPlay on the Mac" width="1600" height="990" loading="lazy"></div>
       <div class="shot ipad"><img src="assets/ipad-home@2x.jpg" alt="CurioPlay on iPad" width="1600" height="2133" loading="lazy"></div>
       <div class="shot phone"><img src="assets/iphone-home@2x.jpg" alt="CurioPlay on iPhone" width="1000" height="2172" loading="lazy"></div>
     </div>
@@ -64,9 +65,9 @@
     <div class="progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </div>
   <div class="wrap center" style="padding:60px 28px 20px">
-    <div class="kicker rv">One purchase, four screens</div>
-    <h2 class="rv">Native <span class="gold">everywhere you watch.</span></h2>
-    <p class="sub rv">Not a phone app stretched onto a TV. Each version is built for its screen and its remote, and with Pro your history, favourites and Up Next follow you through your own iCloud.</p>
+    <div class="rv"><div class="kicker">One purchase, four screens</div>
+    <h2>Native <span class="gold">everywhere you watch.</span></h2>
+    <p class="sub">Not a phone app stretched onto a TV. Each version is built for its screen and its remote, and with Pro your history, favourites and Up Next follow you through your own iCloud.</p></div>
   </div>
 </section>
 
@@ -74,10 +75,10 @@
   <div class="wrap">
     <div class="rv"><div class="kicker">Live TV</div><h2>A real TV guide. <span class="gold">Catch-up included.</span></h2><p class="sub">What's on now and next, today and the week ahead — on the screen you are holding and on the one on the wall.</p></div>
     <div class="chapter" data-chapter>
-      <div class="media"><div class="frame">
-        <video class="on" muted loop playsinline preload="metadata" poster="assets/video/tv-guide.jpg"><source src="assets/video/tv-guide.mp4" type="video/mp4"></video>
-        <video muted loop playsinline preload="metadata" poster="assets/video/mac-live.jpg"><source src="assets/video/mac-live.mp4" type="video/mp4"></video>
-        <video muted loop playsinline preload="metadata" poster="assets/video/mac-guide.jpg"><source src="assets/video/mac-guide.mp4" type="video/mp4"></video>
+      <div class="media"><div class="frame" style="aspect-ratio:16/9">
+        <div class="vid on" data-src="assets/video/tv-guide.mp4"><img src="assets/video/tv-guide.jpg" alt="The TV guide on Apple TV" width="1600" height="900" loading="lazy"><video muted loop playsinline preload="none"></video></div>
+        <div class="vid" data-src="assets/video/mac-live.mp4"><img src="assets/video/mac-live.jpg" alt="Live TV on the Mac" width="1440" height="891" loading="lazy"><video muted loop playsinline preload="none"></video></div>
+        <div class="vid" data-src="assets/video/mac-guide.mp4"><img src="assets/video/mac-guide.jpg" alt="The guide on the Mac" width="1600" height="990" loading="lazy"><video muted loop playsinline preload="none"></video></div>
       </div></div>
       <div class="steps">
         <div class="step on"><h3>The guide you actually use</h3><p>Channels by row, programmes by time, today and the week ahead. On Apple TV the remote does the rest.</p></div>
@@ -92,10 +93,10 @@
   <div class="wrap">
     <div class="rv"><div class="kicker">Movies &amp; series</div><h2>Enriched, <span class="gold">on their own.</span></h2><p class="sub">Posters, cast and descriptions appear without you lifting a finger. Seasons and episodes fall into order.</p></div>
     <div class="chapter flip" data-chapter>
-      <div class="media"><div class="frame">
-        <video class="on" muted loop playsinline preload="metadata" poster="assets/video/mac-player.jpg"><source src="assets/video/mac-player.mp4" type="video/mp4"></video>
+      <div class="media"><div class="frame" style="aspect-ratio:16/9">
+        <div class="vid on" data-src="assets/video/mac-player.mp4"><img src="assets/video/mac-player.jpg" alt="A film playing in its own window on the Mac" width="1440" height="891" loading="lazy"><video muted loop playsinline preload="none"></video></div>
         <img src="assets/mac-groups@2x.jpg" alt="Channel groups on the Mac" width="2200" height="1360" loading="lazy">
-        <video muted loop playsinline preload="metadata" poster="assets/video/tv-search.jpg"><source src="assets/video/tv-search.mp4" type="video/mp4"></video>
+        <div class="vid" data-src="assets/video/tv-search.mp4"><img src="assets/video/tv-search.jpg" alt="Search on Apple TV" width="1600" height="900" loading="lazy"><video muted loop playsinline preload="none"></video></div>
       </div></div>
       <div class="steps">
         <div class="step on"><h3>Every title, dressed</h3><p>Artwork, cast and descriptions are fetched automatically for what you already have. A film opens in its own window on the Mac.</p></div>
@@ -110,8 +111,8 @@
   <div class="wrap">
     <div class="rv"><div class="kicker">Ask Curio</div><h2>Ask for a film, <span class="gold">a mood, a night.</span></h2><p class="sub">"Something quiet and beautiful for tonight." The assistant answers from your own library, in your own words, on your device.</p></div>
     <div class="chapter" data-chapter>
-      <div class="media"><div class="frame">
-        <video class="on" muted loop playsinline preload="metadata" poster="assets/video/mac-ask.jpg"><source src="assets/video/mac-ask.mp4" type="video/mp4"></video>
+      <div class="media"><div class="frame" style="aspect-ratio:16/9">
+        <div class="vid on" data-src="assets/video/mac-ask.mp4"><img src="assets/video/mac-ask.jpg" alt="Ask Curio on the Mac" width="1600" height="990" loading="lazy"><video muted loop playsinline preload="none"></video></div>
         <img src="assets/tv-curated@2x.jpg" alt="Curated for you tonight on Apple TV" width="1920" height="1080" loading="lazy">
       </div></div>
       <div class="steps">
@@ -126,7 +127,7 @@
   <div class="wrap">
     <div class="rv"><div class="kicker">Family</div><h2>Kids Mode, <span class="gold">locked with a PIN.</span></h2><p class="sub">Choose an age preset, approve the live categories and the film genres, hand the remote over.</p></div>
     <div class="chapter flip" data-chapter>
-      <div class="media"><div class="frame phone">
+      <div class="media"><div class="frame phone" style="aspect-ratio:1000/2172">
         <img class="on" src="assets/iphone-kids@2x.jpg" alt="Kids Mode on iPhone" width="1000" height="2172" loading="lazy">
         <img src="assets/iphone-groups@2x.jpg" alt="Pin and hide groups" width="1000" height="2172" loading="lazy">
         <img src="assets/iphone-collection@2x.jpg" alt="Collection: favourites, Up Next, recordings, downloads" width="1000" height="2172" loading="lazy">
@@ -144,10 +145,10 @@
   <div class="wrap">
     <div class="rv center"><div class="kicker">In motion</div><h2>See it <span class="gold">move.</span></h2><p class="sub">Real captures of the app playing the built-in Sample Library. No provider involved.</p></div>
     <div class="reel rv">
-      <div class="clip tv"><video muted loop playsinline preload="metadata" poster="assets/video/tv-play.jpg" data-auto><source src="assets/video/tv-play.mp4" type="video/mp4"></video><span class="cap">Apple TV — a film, full screen</span></div>
+      <div class="clip vid" data-src="assets/video/tv-play.mp4" style="aspect-ratio:16/9"><img src="assets/video/tv-play.jpg" alt="" width="1920" height="1080" loading="lazy"><video muted loop playsinline preload="none"></video><span class="cap">Apple TV — a film, full screen</span></div>
       <div class="col">
-        <div class="clip mac"><video muted loop playsinline preload="metadata" poster="assets/video/mac-live.jpg" data-auto><source src="assets/video/mac-live.mp4" type="video/mp4"></video><span class="cap">Mac — live TV with the guide</span></div>
-        <div class="clip"><video muted loop playsinline preload="metadata" poster="assets/video/iphone-player.jpg" data-auto><source src="assets/video/iphone-player.mp4" type="video/mp4"></video><span class="cap">iPhone — from the guide to playback</span></div>
+        <div class="clip vid" data-src="assets/video/mac-live.mp4" style="aspect-ratio:1440/891"><img src="assets/video/mac-live.jpg" alt="" width="1440" height="891" loading="lazy"><video muted loop playsinline preload="none"></video><span class="cap">Mac — live TV with the guide</span></div>
+        <div class="clip vid" data-src="assets/video/iphone-player.mp4" style="aspect-ratio:1080/2346"><img src="assets/video/iphone-player.jpg" alt="" width="1080" height="2346" loading="lazy"><video muted loop playsinline preload="none"></video><span class="cap">iPhone — from the guide to playback</span></div>
       </div>
     </div>
   </div>

@@ -11,20 +11,14 @@ a{color:inherit} img,video{max-width:100%;height:auto;display:block}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
 .gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* living background: three slow aurora blobs in the icon palette + film grain */
-.aurora{position:fixed;inset:-25%;z-index:0;pointer-events:none;filter:blur(70px);opacity:.9}
-.aurora i{position:absolute;border-radius:50%;width:62vmax;height:62vmax;will-change:transform}
-.aurora .a{left:-8%;top:-6%;background:radial-gradient(circle at 40% 40%,rgba(202,169,111,.34),transparent 62%);animation:driftA 46s ease-in-out infinite alternate}
-.aurora .b{right:-12%;top:18%;background:radial-gradient(circle at 50% 50%,rgba(38,78,118,.30),transparent 62%);animation:driftB 58s ease-in-out infinite alternate}
-.aurora .c{left:22%;bottom:-18%;background:radial-gradient(circle at 50% 50%,rgba(112,52,76,.26),transparent 62%);animation:driftC 52s ease-in-out infinite alternate}
-@keyframes driftA{from{transform:translate(0,0) scale(1)}to{transform:translate(18vw,14vh) scale(1.18)}}
-@keyframes driftB{from{transform:translate(0,0) scale(1.1)}to{transform:translate(-16vw,-10vh) scale(.92)}}
-@keyframes driftC{from{transform:translate(0,0) scale(.95)}to{transform:translate(12vw,-16vh) scale(1.2)}}
-.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+/* living background: ONE pre-rendered aurora image (assets/aurora.jpg) on a composited layer, slow drift, no filters */
+.aurora{position:fixed;inset:-12%;z-index:0;pointer-events:none;background:#070605 url("../assets/aurora.jpg") center/cover no-repeat;will-change:transform;animation:drift 70s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(-2%,-1.5%,0) scale(1.04)}to{transform:translate3d(2%,2%,0) scale(1.12)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 main,nav,footer{position:relative;z-index:2}
 
 /* nav */
-nav.top{position:sticky;top:0;z-index:30;backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);background:rgba(7,6,5,.55);border-bottom:1px solid var(--line)}
+nav.top{position:sticky;top:0;z-index:30;backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);background:rgba(7,6,5,.62);border-bottom:1px solid var(--line)}
 nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:700;letter-spacing:-.01em}
 .brand img{width:34px;height:34px;border-radius:9px}
@@ -40,7 +34,8 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 /* hero: full-bleed Apple TV playback */
 .hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
 .hero .bg{position:absolute;inset:0;z-index:-2}
-.hero .bg video{width:100%;height:100%;object-fit:cover;transform:scale(1.04);filter:brightness(.62) saturate(1.05)}
+.hero .bg img,.hero .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(1.05)}
+.hero .bg video{opacity:0;transition:opacity .6s} .hero .bg.ready video{opacity:1}
 .hero .veil{position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 50% at 50% 48%,rgba(7,6,5,.55),transparent 70%),linear-gradient(180deg,rgba(7,6,5,.45) 0%,rgba(7,6,5,.25) 35%,rgba(7,6,5,.82) 70%,var(--bg) 100%)}
 .hero .wrap{padding-top:22vh;padding-bottom:64px;text-align:center}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);font-weight:700}
@@ -56,6 +51,11 @@ h1 .w{display:inline-block}
 .strip{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;color:var(--muted);font-size:14px;padding:26px 0 0}
 .strip b{color:var(--ink);font-weight:600}
 
+/* lazy video: poster <img> underneath, <video> fades in on "playing" — a black box is impossible */
+.vid{position:relative;overflow:hidden;background:#000}
+.vid>img,.vid>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vid>video{opacity:0;transition:opacity .5s var(--ease)} .vid.ready>video{opacity:1}
+
 /* sections */
 section{padding:120px 0;position:relative}
 .kicker{color:var(--gold-ink);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
@@ -68,7 +68,7 @@ h2{font-size:clamp(34px,5vw,62px);letter-spacing:-.035em;line-height:1.02;margin
 #screens .stage{height:100svh;display:grid;place-items:center;position:relative;overflow:hidden}
 #screens .frameWrap{position:relative;width:min(1000px,80vw);aspect-ratio:16/9;margin-bottom:9vh}
 #screens .shot{position:absolute;inset:0;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 50px 140px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.08);opacity:0}
-#screens .shot img,#screens .shot video{width:100%;height:100%;object-fit:cover}
+#screens .shot>img{width:100%;height:100%;object-fit:cover;display:block}
 /* portrait devices are sized from the 16:9 frame height: phone = 94% of it, iPad = 95% of it */
 #screens .shot.phone{width:24.3%;left:37.85%;right:auto;aspect-ratio:1000/2172;height:auto;top:3%;bottom:auto;border-radius:34px;box-shadow:0 40px 110px rgba(0,0,0,.75),0 0 0 8px #110e0b,0 0 0 9px rgba(255,255,255,.08)}
 #screens .shot.ipad{width:40%;left:30%;right:auto;aspect-ratio:1600/2133;height:auto;top:2.5%;bottom:auto;border-radius:22px;box-shadow:0 40px 110px rgba(0,0,0,.75),0 0 0 8px #110e0b,0 0 0 9px rgba(255,255,255,.08)}
@@ -86,8 +86,8 @@ h2{font-size:clamp(34px,5vw,62px);letter-spacing:-.035em;line-height:1.02;margin
 .media{position:sticky;top:96px}
 .frame{position:relative;border-radius:var(--r);overflow:hidden;background:#000;box-shadow:0 40px 110px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.06)}
 .frame.phone{width:min(340px,86%,calc((100vh - 190px) * .46));margin:0 auto;border-radius:44px;box-shadow:0 40px 110px rgba(0,0,0,.75),0 0 0 9px #110e0b,0 0 0 10px rgba(255,255,255,.08)}
-.frame img,.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease),transform 1.2s var(--ease);transform:scale(1.03)}
-.frame img.on,.frame video.on{opacity:1;position:relative;transform:none}
+.frame>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s var(--ease),transform 1.2s var(--ease);transform:scale(1.03)}
+.frame>.on{opacity:1;transform:none}
 .steps{padding-top:8px}
 .step{padding:26px 0 26px 26px;border-left:2px solid var(--line);position:relative;transition:border-color .4s,opacity .4s;opacity:.42}
 .step.on{border-color:var(--gold-2);opacity:1}
@@ -99,8 +99,8 @@ h2{font-size:clamp(34px,5vw,62px);letter-spacing:-.035em;line-height:1.02;margin
 /* motion reel */
 .reel{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-top:44px}
 .clip{position:relative;border-radius:var(--r);overflow:hidden;background:#000;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06)}
-.clip video{width:100%;height:100%;object-fit:cover}
-.clip .cap{position:absolute;left:18px;bottom:16px;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);font-size:13px;color:var(--ink)}
+.clip>img,.clip>video{width:100%;height:100%;object-fit:cover}
+.clip .cap{z-index:2;position:absolute;left:18px;bottom:16px;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);font-size:13px;color:var(--ink)}
 .reel .col{display:grid;gap:18px}
 .clip.mac{border-radius:16px}
 .clip.tv{aspect-ratio:16/9}
@@ -149,7 +149,7 @@ footer a{text-decoration:none;margin-right:18px} footer a:hover{color:var(--ink)
 /* reveal (JS adds .in; without JS everything is visible) */
 html.js .rv{opacity:0;transform:translateY(26px)}
 html.js .rv.in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
-@media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none} .aurora i{animation:none} .scrollhint:after{animation:none}}
+@media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none} .aurora{animation:none} .scrollhint:after{animation:none}}
 
 @media (max-width:960px){
   .chapter,.chapter.flip{grid-template-columns:1fr;gap:28px} .chapter.flip .media{order:0} .media{position:relative;top:auto}
