@@ -25,8 +25,8 @@
     const mid = innerHeight / 2; let best = null, bestD = Infinity;
     for (const v of vids) {
       if (v.dataset.gate === 'off') continue;
-      const r = v.getBoundingClientRect(); if (r.bottom <= 0 || r.top >= innerHeight) continue;
-      const d = Math.abs((r.top + r.bottom) / 2 - mid); if (d < bestD) { bestD = d; best = v; }
+      const r = v.getBoundingClientRect(); if (r.bottom <= 0 || r.top >= innerHeight || r.right <= 0 || r.left >= innerWidth) continue;
+      const d = Math.hypot((r.top + r.bottom) / 2 - mid, ((r.left + r.right) / 2 - innerWidth / 2) * .6); if (d < bestD) { bestD = d; best = v; }
     }
     if (best === current) return;
     if (current) { const el = current.querySelector('video'); if (el && !el.paused) el.pause(); }
@@ -66,6 +66,18 @@
     const req = () => { if (!raf) { raf = true; requestAnimationFrame(update); } };
     addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); update();
   } else if (stage) { stage.dataset.phase = 0; }
+
+  /* ---- highlights carousel: arrows, dots, snap ---- */
+  const track = document.querySelector('[data-track]');
+  if (track) {
+    const cards = [...track.querySelectorAll('.card')], dots = document.querySelector('.dots');
+    cards.forEach((c, i) => { const d = document.createElement('i'); if (i === 0) d.classList.add('on'); dots.appendChild(d); });
+    const index = () => { const x = track.scrollLeft + track.clientWidth / 2; let best = 0, bd = Infinity; cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - x); if (d < bd) { bd = d; best = i; } }); return best; };
+    const go = i => { i = Math.max(0, Math.min(cards.length - 1, i)); const c = cards[i]; track.scrollTo({ left: c.offsetLeft + c.offsetWidth / 2 - track.clientWidth / 2, behavior: 'smooth' }); };
+    document.querySelector('.arrow.prev').addEventListener('click', () => go(index() - 1));
+    document.querySelector('.arrow.next').addEventListener('click', () => go(index() + 1));
+    let t; track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(() => { const i = index(); [...dots.children].forEach((d, k) => d.classList.toggle('on', k === i)); onScroll(); }, 80); }, { passive: true });
+  }
 
   /* ---- how-to filter tabs ---- */
   const tuts = document.querySelector('.tuts');
