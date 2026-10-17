@@ -24,10 +24,10 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated 27 August 2026</p>
+<p class="updated">Last updated 17 October 2026</p>
 <h2>The short version</h2>
 <p>CurioPlay runs no servers. We have no account for you, we do not sell your data, we do not advertise to you, and we do not track you across other apps or websites.</p>
-<p>Information leaves your device in the ways listed in section 3, and nowhere else: looking up artwork and descriptions, an app-authenticity check, syncing to your own private iCloud, crash reports on Apple TV, the cloud AI assistant if you switch it on, your own Calendar if you tap Add to Calendar, and a Watch Party if you start one.</p>
+<p>Information leaves your device in the ways listed in section 3, and nowhere else: looking up artwork and descriptions, an app-authenticity check, syncing to your own private iCloud, crash reports on Apple TV, the cloud AI assistant if you switch it on, your own Calendar if you tap Add to Calendar, a Watch Party if you start one, and finding your provider&#x27;s server when it stops answering.</p>
 <h2>1. No CurioPlay account</h2>
 <p>CurioPlay has no sign-up and no CurioPlay login. We hold no name, email address or profile for you, and we run no server that stores what you watch.</p>
 <p>You may sign in to services you already have — such as your IPTV provider. Those are your accounts with those companies, not with us.</p>
@@ -46,6 +46,7 @@
 <p>If you turn it on, what is sent to Google&#x27;s Gemini service is: your question, a small summary of your taste, titles from your library, and recent items from your watch history when they help answer. Your provider username, password and address are never sent. No account identifier is attached. These requests are handled under Google&#x27;s Gemini API terms, which can allow Google to use them to improve its services; if that is not acceptable to you, leave the cloud assistant off.</p>
 <p><strong>e) Your Calendar — only when you ask.</strong> If you tap Add to Calendar on a programme, CurioPlay asks for Calendar permission and writes one event — the programme name, the channel and, where available, the summary — into your default calendar. It requests write-only access and cannot read your calendar. The event then belongs to your Calendar, not to us; if your default calendar is an iCloud one it syncs like any other event.</p>
 <p><strong>f) Watch Party.</strong> If you start or join a Watch Party, CurioPlay uses Apple&#x27;s SharePlay inside your FaceTime call. What reaches the other people in that call is the reactions you send, the name of a channel when you propose switching to it, and a random per-session token so their app can group your messages. Your name, contacts, playlists, provider details and viewing history are not sent.</p>
+<p><strong>g) Finding your provider&#x27;s server.</strong> IPTV providers move their servers often, and a device can hold on to an old address for hours. If your provider&#x27;s server stops answering while the rest of your network works, CurioPlay asks two public DNS services for the server&#x27;s current address, over an encrypted HTTPS connection: Cloudflare (cloudflare-dns.com), then Google Public DNS (dns.google). They receive the server&#x27;s host name and, as with any web request, your IP address. Nothing else is sent: no username, password, channel or viewing information. This happens automatically, on iPhone, iPad, Mac and Apple TV, and only when a provider&#x27;s server cannot be reached. Each service has its own privacy policy.</p>
 <h2>4. What we do not do</h2>
 <ul>
 <li>No advertising. No advertising SDK is present on any platform.
