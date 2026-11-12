@@ -24,18 +24,18 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated 10 November 2026</p>
+<p class="updated">Last updated 12 November 2026</p>
 <h2>The short version</h2>
 <p>CurioPlay runs no servers. We have no account for you, we do not sell your data, we do not advertise to you, and we do not track you across other apps or websites.</p>
-<p>Information leaves your device in the ways listed in section 3, and nowhere else: looking up artwork and descriptions, an app-authenticity check, syncing to your own private iCloud, crash reports on Apple TV, the cloud AI assistant if you switch it on, your own Calendar if you tap Add to Calendar, a trailer you play in YouTube&#x27;s player, and finding your provider&#x27;s server when it stops answering.</p>
+<p>Information leaves your device in the ways listed in section 3, and nowhere else: looking up artwork and descriptions, an app-authenticity check, syncing to your own private iCloud, crash reports on Apple TV, the cloud AI assistant if you switch it on, your own Calendar if you tap Add to Calendar, a trailer you play in YouTube&#x27;s player, finding your provider&#x27;s server when it stops answering, and a Watch Party with the people on your FaceTime call if you start or join one.</p>
 <h2>1. No CurioPlay account</h2>
 <p>CurioPlay has no sign-up and no CurioPlay login. We hold no name, email address or profile for you, and we run no server that stores what you watch.</p>
 <p>You may sign in to services you already have — such as your IPTV provider. Those are your accounts with those companies, not with us.</p>
 <h2>2. What stays on your device</h2>
 <ul>
-<li><strong>What you watch.</strong> Viewing history, resume positions, favourites and recommendations are computed and stored on your device.
-    - <strong>Your provider credentials.</strong> The username and password for your provider are stored in the device Keychain, protected by the system, and are never sent to us. They are sent to the provider you entered them for — and, while iCloud sync is on, to your own private iCloud so your other devices can use the same provider. In iCloud they are held in CloudKit&#x27;s encrypted fields, which we cannot read.
-    - <strong>Kids Mode.</strong> Your Kids Mode settings and PIN are stored only on this device and are never synced or sent anywhere.</li>
+<li><strong>What you watch.</strong> Viewing history, resume positions, favourites and recommendations are computed and stored on your device. In a Watch Party, the people you watch with are told the one title you are watching together (section 3(h)) — not your history.</li>
+<li><strong>Your provider credentials.</strong> The username and password for your provider are stored in the device Keychain, protected by the system, and are never sent to us. They are sent to the provider you entered them for — and, while iCloud sync is on, to your own private iCloud so your other devices can use the same provider. In iCloud they are held in CloudKit&#x27;s encrypted fields, which we cannot read.</li>
+<li><strong>Kids Mode.</strong> Your Kids Mode settings and PIN are stored only on this device and are never synced or sent anywhere.</li>
 </ul>
 <p><strong>iCloud sync is on by default</strong> while you are signed in to iCloud, and you can turn it off in Settings. It uses <strong>your own private iCloud database</strong> — your Apple account, governed by Apple&#x27;s privacy policy. We cannot read it.</p>
 <h2>3. What leaves your device</h2>
@@ -47,25 +47,36 @@
 <p><strong>e) Your Calendar — only when you ask.</strong> If you tap Add to Calendar on a programme, CurioPlay asks for Calendar permission and writes one event — the programme name, the channel and, where available, the summary — into your default calendar. It requests write-only access and cannot read your calendar. The event then belongs to your Calendar, not to us; if your default calendar is an iCloud one it syncs like any other event.</p>
 <p><strong>f) Trailers — YouTube.</strong> A trailer you open from a film or series page or from Home plays in YouTube&#x27;s embedded player, in YouTube&#x27;s privacy-enhanced mode (youtube-nocookie.com); CurioPlay uses YouTube API Services for this. While it plays, YouTube receives your IP address, which video is playing and how it plays, and the player may store cookies or similar data on your device — CurioPlay keeps that in temporary storage that is discarded when the trailer closes. In this mode YouTube does not use the view to personalise YouTube or its ads; it may still show its own non-personalised ads. YouTube handles this data under the <a href="https://www.google.com/policies/privacy">Google Privacy Policy</a>, and playing a trailer means you accept the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. A link inside the player opens the YouTube app or your browser. Trailers play on iPhone, iPad and Mac.</p>
 <p><strong>g) Finding your provider&#x27;s server.</strong> IPTV providers move their servers often, and a device can hold on to an old address for hours. If your provider&#x27;s server stops answering while the rest of your network works, CurioPlay asks two public DNS services for the server&#x27;s current address, over an encrypted HTTPS connection: Cloudflare (cloudflare-dns.com), then Google Public DNS (dns.google). They receive the server&#x27;s host name and, as with any web request, your IP address. Nothing else is sent: no username, password, channel or viewing information. This happens automatically, on iPhone, iPad, Mac and Apple TV, and only when a provider&#x27;s server cannot be reached. Each service has its own privacy policy.</p>
+<p><strong>h) Watch Party — SharePlay, on iPhone and iPad.</strong> A Watch Party lets the people on a FaceTime call open the same title, each in their own copy of CurioPlay. Nothing is shared unless you start a Watch Party or join one. It runs over Apple&#x27;s SharePlay, between the devices of the people on the call. It does not pass through a CurioPlay server — there is none — and we receive none of it.</p>
+<p>While you are in a Watch Party, the other participants&#x27; devices receive:</p>
+<ul>
+<li><strong>The title the party is watching</strong>: its name as your library shows it, and what is needed to find the same title in their own library — its programme-guide id if it has one, a code calculated from its name and group, and its id in your library. The system&#x27;s invitation to the call shows that name.</li>
+<li><strong>A label for you in the list of participants</strong>: the kind of device you are using, such as &quot;iPhone&quot; or &quot;iPad&quot;. Never your name — the app does not know it.</li>
+<li><strong>Your reactions</strong>: the ones you tap, from six fixed emoji.</li>
+<li><strong>For a film or an episode, your play, pause and position</strong>, so that everyone stays at the same place. This is Apple&#x27;s playback coordination. A live channel is not coordinated: each device plays it on its own connection.</li>
+<li><strong>Technical details</strong>: a random identifier Apple gives you for that party, the app&#x27;s build number, and for each message a random number and the time it was sent.</li>
+</ul>
+<p>There is no chat and no typed text. No picture, voice or video passes through CurioPlay; FaceTime carries the call itself. Your provider&#x27;s address, your username and password, the stream, your playlists, your viewing history and your favourites are <strong>never</strong> shared: each participant plays the title from their own provider, and for a participant whose library does not have it, it does not play — they are told so. Sharing stops when you leave the party or close the player. Apple handles SharePlay under its own privacy policy.</p>
 <h2>4. What we do not do</h2>
 <ul>
-<li>No advertising. No advertising SDK is present on any platform, and CurioPlay shows no ads. YouTube&#x27;s own player may show its non-personalised ads in a trailer you play (3(f)); we choose none of them and earn nothing from them.
-    - No usage analytics. Google Analytics for Firebase is not used anywhere, and nothing measures what you browse, tap or watch. The exceptions are the app-open session event that comes with Apple TV crash reporting, described in 3(c) — turning that off stops it — and YouTube&#x27;s own statistics for a trailer you play, described in 3(f).
-    - No tracking across other companies&#x27; apps or websites, and we never ask permission to, because we never do it.
-    - No advertising identifier (IDFA) is read.
-    - No selling or sharing of personal information.</li>
+<li>No advertising. No advertising SDK is present on any platform, and CurioPlay shows no ads. YouTube&#x27;s own player may show its non-personalised ads in a trailer you play (3(f)); we choose none of them and earn nothing from them.</li>
+<li>No usage analytics. Google Analytics for Firebase is not used anywhere, and nothing measures what you browse, tap or watch. The exceptions are the app-open session event that comes with Apple TV crash reporting, described in 3(c) — turning that off stops it — and YouTube&#x27;s own statistics for a trailer you play, described in 3(f).</li>
+<li>No tracking across other companies&#x27; apps or websites, and we never ask permission to, because we never do it.</li>
+<li>No advertising identifier (IDFA) is read.</li>
+<li>No selling or sharing of personal information.</li>
 </ul>
 <h2>5. Purchases</h2>
 <p>CurioPlay Pro is sold through Apple. Apple tells the app whether a valid purchase exists — nothing more. We never receive your payment details.</p>
 <h2>6. Children, and what Kids Mode is not</h2>
 <p>CurioPlay is not directed at children under 13, and we knowingly collect nothing from them.</p>
-<p>Kids Mode restricts what can be watched and keeps all AI processing on the device — nothing reaches the cloud assistant while it is active. Be aware of what it does <strong>not</strong> do: the other connections in section 3 carry on unchanged, including artwork lookups, trailers, iCloud sync and Apple TV crash reports. CurioPlay also plays whatever your provider supplies; we do not rate, filter or classify that content. Kids Mode works from rules stored on your device — a convenience for parents, not a substitute for Screen Time or your provider&#x27;s own controls.</p>
+<p>Kids Mode restricts what can be watched and keeps all AI processing on the device — nothing reaches the cloud assistant while it is active. Be aware of what it does <strong>not</strong> do: the other connections in section 3 carry on unchanged, including artwork lookups, trailers, iCloud sync and Apple TV crash reports. A Watch Party stays available too, but only for what Kids Mode allows on this device: a title it does not allow is refused when someone else&#x27;s party asks for it, without the PIN being asked for. CurioPlay also plays whatever your provider supplies; we do not rate, filter or classify that content. Kids Mode works from rules stored on your device — a convenience for parents, not a substitute for Screen Time or your provider&#x27;s own controls.</p>
 <h2>7. Your choices</h2>
 <ul>
-<li>Turn the cloud AI assistant on or off (off by default): Settings.
-    - Turn iCloud sync off, and delete what has been synced: Settings.
-    - Turn Apple TV crash reporting off: Settings on the Apple TV.
-    - Delete the app. Everything held on the device goes with it.</li>
+<li>Turn the cloud AI assistant on or off (off by default): Settings.</li>
+<li>Turn iCloud sync off, and delete what has been synced: Settings.</li>
+<li>Turn Apple TV crash reporting off: Settings on the Apple TV.</li>
+<li>Watch Party: nothing is shared unless you start or join one. Leave it from the SharePlay button in the player, or close the player. SharePlay itself can be switched off in the system&#x27;s FaceTime settings.</li>
+<li>Delete the app. Everything held on the device goes with it.</li>
 </ul>
 <p>You have the right to ask for access to, correction of, or deletion of personal information about you, to object to or restrict its use, and to complain to your data protection authority. We hold no account and no copy of your library, so in most cases there is nothing for us to retrieve or erase — requests about data held by Apple, Google or the catalogue services need to go to them. Write to us anyway if you are unsure and we will tell you where to ask.</p>
 <h2>8. Changes</h2>
